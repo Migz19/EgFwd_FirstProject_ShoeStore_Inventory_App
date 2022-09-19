@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="LoginScreen"
-            type="com.example.shoestore.ui.LoginScreen" />
+            name="User"
+            type="com.example.shoestore.ui.LoginScreen.User" />
     </data>
 
     <!-- Using Constraint layout and Ssp & Sdp library to maintain UI for different screen sizes -->
@@ -58,6 +58,7 @@
                     android:layout_marginTop="@dimen/_30sdp"
                     android:background="@drawable/input_frame"
                     android:hint="Email"
+                    android:text="@={User.email}"
                     android:inputType="textEmailAddress"
                     android:paddingStart="@dimen/_10sdp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +72,7 @@
                     android:layout_marginTop="@dimen/_30sdp"
                     android:background="@drawable/input_frame"
                     android:hint="Password"
+                    android:text="@={User.password}"
                     android:inputType="textPassword"
                     android:paddingStart="@dimen/_10sdp"
                     app:layout_constraintEnd_toEndOf="@+id/email_txt"

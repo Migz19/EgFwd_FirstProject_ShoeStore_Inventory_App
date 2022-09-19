@@ -15,8 +15,8 @@ import com.example.shoestore.databinding.ActivityMainBinding
 import com.example.shoestore.databinding.FragmentLoginScreenBinding
 
 class LoginScreen : Fragment() {
-    private lateinit var binding : FragmentLoginScreenBinding
-    private lateinit var navController : NavController
+    private lateinit var binding: FragmentLoginScreenBinding
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         navController = findNavController()
@@ -26,7 +26,7 @@ class LoginScreen : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_login_screen, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login_screen, container, false)
         binding.loginBtn1.setOnClickListener {
             if (checkCredentials())
                 navController.navigate(R.id.action_loginScreen_to_welcomeScreen)
@@ -38,14 +38,14 @@ class LoginScreen : Fragment() {
         return binding.root
     }
 
+    data class User(
+        var email: String = "",
+        var password: String = ""
+    )
 
     private fun checkCredentials ():Boolean{ //check if email and password input != null
-        if (binding.emailTxt.text.isEmpty()||binding.passwordTxt.text.isEmpty()){
-            Toast.makeText(requireContext(),"Please fill required fields",Toast.LENGTH_SHORT).show()
-            return false
-        }
-        else
-            return true
+        binding.user = User()
+        return !(binding.user.email==""||binding.user.password=="")
     }
 
 }
