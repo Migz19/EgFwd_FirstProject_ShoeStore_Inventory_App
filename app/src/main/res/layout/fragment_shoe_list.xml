@@ -4,12 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="name"
-            type="com.example.shoestore.ui.ShoeListFragment" />
-        <variable
-            name="viewModel"
-            type="com.example.shoestore.ui.ShoeViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,34 +12,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:background="#CEB6EF"
-            app:layout_constraintBottom_toTopOf="@id/scrollView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
 
-            <ImageButton
-                android:id="@+id/back_btn"
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
-                >
-
-            </ImageButton>
-        </Toolbar>
     <ScrollView
         android:id="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+       app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
 

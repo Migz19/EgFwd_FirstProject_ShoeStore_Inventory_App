@@ -28,12 +28,12 @@ class LoginScreen : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login_screen, container, false)
         binding.loginBtn1.setOnClickListener {
-            if (checkCredentials())
-                navController.navigate(R.id.action_loginScreen_to_welcomeScreen)
+            binding.user = User()
+            navController.navigate(R.id.action_loginScreen_to_welcomeScreen)
         }
         binding.loginBtn2.setOnClickListener {
-            if (checkCredentials())
-                navController.navigate(R.id.action_loginScreen_to_welcomeScreen)
+            binding.user = User()
+            navController.navigate(R.id.action_loginScreen_to_welcomeScreen)
         }
         return binding.root
     }
@@ -42,10 +42,5 @@ class LoginScreen : Fragment() {
         var email: String = "",
         var password: String = ""
     )
-
-    private fun checkCredentials ():Boolean{ //check if email and password input != null
-        binding.user = User()
-        return !(binding.user.email==""||binding.user.password=="")
-    }
 
 }

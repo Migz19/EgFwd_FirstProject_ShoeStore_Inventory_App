@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.shoestore.R
 import com.example.shoestore.databinding.FragmentShoeListBinding
 import com.example.shoestore.databinding.ListLayoutBinding
@@ -40,10 +42,7 @@ class ShoeListFragment : Fragment() {
             navController.navigate(R.id.shoeList_to_shoe_details )
             //Navigate to Shoes details screen
         }
-        fragmentBinding.backBtn.setOnClickListener {
-            navController.navigate(R.id.action_shoeListFragment_to_loginScreen)
-            //pop up to login screen
-        }
+        setHasOptionsMenu(true)
 
         return fragmentBinding.root
     }
@@ -55,6 +54,16 @@ class ShoeListFragment : Fragment() {
             listBinding.shoesModel = shoes
             fragmentBinding.layoutList.addView(listBinding.root)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.logout_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        navController.navigate(R.id.action_shoeListFragment_to_loginScreen)
+        return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item)
     }
 
 

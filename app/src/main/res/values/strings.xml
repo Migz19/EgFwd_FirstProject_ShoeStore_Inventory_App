@@ -11,4 +11,5 @@
     <string name="add">Add new shoe</string>
     <string name="instructions">Instructions \n This app is built to achieve a goal by accessing users to add new shoes to the inventory and can see all previous data added \n YOU DON\'T HAVE TO : \n -Post any fake data \n -Post data with inappropriate name or brand </string>
     <string name="welcome">Welcome to our Shoe inventory app</string>
+    <string name="logout">log out</string>
 </resources>

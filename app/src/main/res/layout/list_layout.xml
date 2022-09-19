@@ -4,15 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="shoesVM"
-            type="com.example.shoestore.ui.ShoeViewModel" />
+
         <variable
             name="shoesModel"
             type="com.example.shoestore.model.ShoesModel" />
-        <variable
-            name="list"
-            type="com.example.shoestore.ui.ShoeListFragment" />
+
 
     </data>
 
