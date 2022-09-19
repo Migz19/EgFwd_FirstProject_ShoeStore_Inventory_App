@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginScreen">
+    <fragment
+        android:id="@+id/shoesDetails"
+        android:name="com.example.shoestore.ui.AddShoeScreen"
+        android:label="shoesDetails"
+        tools:layout="@layout/fragment_add_shoe_screen">
+        <action
+            android:id="@+id/shoe_details_to_shoes_list"
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:label="Login"
+        android:name="com.example.shoestore.ui.LoginScreen"
+        tools:layout="@layout/fragment_login_screen"
+        >
+        <action
+            android:id="@+id/action_loginScreen_to_welcomeScreen"
+            app:destination="@id/welcomeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructions"
+        android:name="com.example.shoestore.ui.InstructionsScreen"
+        android:label="fragment_instructions_screen"
+        tools:layout="@layout/fragment_instructions_screen" >
+        <action
+            android:id="@+id/action_instructionsScreen2_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/instructions"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.example.shoestore.ui.ShoeListFragment"
+        android:label="ShoeListFragment"
+        tools:layout="@layout/fragment_shoe_list"
+        >
+        <action
+            android:id="@+id/shoeList_to_shoe_details"
+            app:destination="@id/shoesDetails" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/shoeListFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.example.shoestore.ui.WelcomeScreen"
+        android:label="fragment_welcome_screen"
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreen_to_instructionsScreen2"
+            app:destination="@id/instructions"
+            app:popUpTo="@id/welcomeScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.shoestore.ui.MainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/activity_main"/>
+</navigation>

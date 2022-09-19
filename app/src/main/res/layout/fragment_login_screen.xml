@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="LoginScreen"
+            type="com.example.shoestore.ui.LoginScreen" />
+    </data>
+
+    <!-- Using Constraint layout and Ssp & Sdp library to maintain UI for different screen sizes -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/loginIV"
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/store_icon"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:text="@string/welcome_back"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_20ssp"
+                    android:textColor="@color/design_default_color_primary_variant"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/loginIV" />
+
+                <EditText
+                    android:id="@+id/email_txt"
+                    android:layout_width="@dimen/_220sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/input_frame"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <EditText
+                    android:id="@+id/password_txt"
+                    android:layout_width="@dimen/_220sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/input_frame"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/email_txt"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/email_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/email_txt" />
+
+                <Button
+                    android:id="@+id/login_btn1"
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/input_frame"
+                    android:text="@string/existing_user"
+                    android:textAlignment="center"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textColorHighlight="#B3DFDB"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/password_txt" />
+
+                <Button
+                    android:id="@+id/login_btn2"
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/input_frame"
+                    android:text="@string/new_user"
+                    android:textAlignment="center"
+                    android:textColor="#6B1BDC"
+                    android:textColorHighlight="#B3DFDB"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/login_btn1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/login_btn1"
+                    app:layout_constraintTop_toBottomOf="@+id/login_btn1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

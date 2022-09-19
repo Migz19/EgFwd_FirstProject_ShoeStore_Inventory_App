@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="addnewshoes"
+            type="com.example.shoestore.model.ShoesModel" />
+    </data>
+    <!-- Using Constraint layout and Ssp & Sdp library to maintain UI for different screen sizes -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.AddShoeScreen">
+
+
+        <ImageView
+            android:id="@+id/textView"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginStart="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_marginEnd="@dimen/_100sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/store_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/shoeNameTxt"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:hint="Shoe name"
+            android:text="@={addnewshoes.name}"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/shoeBrandTxt"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:hint="Shoe Brand"
+            android:text="@={addnewshoes.brand}"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeNameTxt" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/input_frame"
+            android:text="Add shoe"
+            android:textColor="@color/design_default_color_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.463"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descTxt" />
+
+        <EditText
+            android:id="@+id/sizeTxt"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:ems="10"
+            android:hint="size"
+        android:text="@={``+addnewshoes.size}"
+        android:paddingStart="@dimen/_8sdp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <!--found this way to make 2 way binding with double on stackoverflow -->
+    <EditText
+        android:id="@+id/descTxt"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:hint="Description"
+        android:text="@={addnewshoes.description}"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shoeBrandTxt" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

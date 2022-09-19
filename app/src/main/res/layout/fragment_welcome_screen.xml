@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <!-- Using Constraint layout and Ssp & Sdp library to maintain UI for different screen sizes -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.WelcomeScreen">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:textSize="@dimen/_30ssp"
+            android:paddingStart="@dimen/_8sdp"
+            android:text="@string/welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="@string/welcome_phrase"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:background="@drawable/input_frame"
+            android:text="@string/get_started"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary"
+            android:textColorHighlight="#B3DFDB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

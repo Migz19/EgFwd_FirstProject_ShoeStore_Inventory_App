@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_new_shoe">Add new shoe</string>
+    <string name="welcome_back">Welcome Back !!</string>
+    <string name="existing_user">Continue as existing user</string>
+    <string name="new_user">Log in as new User</string>
+    <string name="welcome_phrase"> This application provides a list of our shoes collection and ability to add new shoes by mentioning name and brand</string>
+    <string name="get_started">Get Started</string>
+    <string name="add">Add new shoe</string>
+    <string name="instructions">Instructions \n This app is built to achieve a goal by accessing users to add new shoes to the inventory and can see all previous data added \n YOU DON\'T HAVE TO : \n -Post any fake data \n -Post data with inappropriate name or brand </string>
+    <string name="welcome">Welcome to our Shoe inventory app</string>
+</resources>

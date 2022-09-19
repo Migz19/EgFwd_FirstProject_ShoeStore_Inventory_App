@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoesVM"
+            type="com.example.shoestore.ui.ShoeViewModel" />
+        <variable
+            name="shoesModel"
+            type="com.example.shoestore.model.ShoesModel" />
+        <variable
+            name="list"
+            type="com.example.shoestore.ui.ShoeListFragment" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_320sdp"
+            android:layout_height="@dimen/_200sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/brand_tv"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+
+                    android:hint="brand"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    android:text="@{shoesModel.brand}"
+
+                    app:layout_constraintStart_toEndOf="@+id/shoesIV"
+                    app:layout_constraintTop_toBottomOf="@+id/name_tv" />
+
+                <TextView
+                    android:id="@+id/name_tv"
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:hint="Name"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@{shoesModel.name}"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/shoesIV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/shoesIV"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/shoes_icon"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/size"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:text="@{' ' + String.valueOf(shoesModel.size)}"
+                    android:hint="size"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/brand_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/name_tv" />
+
+                <TextView
+                    android:id="@+id/descriptionTV"
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:hint="brand"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="@{shoesModel.description}"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/shoesIV"
+                    app:layout_constraintTop_toBottomOf="@+id/brand_tv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
